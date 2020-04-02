@@ -68,6 +68,7 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell)
       {
         if (current_head_cell.x == item.x && current_head_cell.y == item.y) 
         {
+          std::cout << "Game Over" << std::endl;
           alive = false;
         }
       }

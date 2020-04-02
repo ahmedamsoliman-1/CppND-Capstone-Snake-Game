@@ -1,6 +1,8 @@
 #include <iostream>
 #include "controller.h"
 #include "game.h"
+#include "player.h"
+#include "log.h"
 #include "renderer.h"
 
 /*
@@ -17,20 +19,41 @@ loop.
 
 int main() 
 {
-  constexpr std::size_t kFramesPerSecond{60};                     //Game running at 60 frame per second 
-  constexpr std::size_t kMsPerFrame{1000 / kFramesPerSecond};     // milli second per frame 
-  constexpr std::size_t kScreenWidth{640};
-  constexpr std::size_t kScreenHeight{640};
-  constexpr std::size_t kGridWidth{32};
-  constexpr std::size_t kGridHeight{32};
+  Player player;
+  Log log;
 
-  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-  Controller controller;
-  Game game(kGridWidth, kGridHeight);
-  game.Run(controller, renderer, kMsPerFrame);
+  while(true)
+  {
+      constexpr std::size_t kFramesPerSecond{60};                     //Game running at 60 frame per second 
+      constexpr std::size_t kMsPerFrame{1000 / kFramesPerSecond};     // milli second per frame 
+      constexpr std::size_t kScreenWidth{640};
+      constexpr std::size_t kScreenHeight{640};
+      constexpr std::size_t kGridWidth{32};
+      constexpr std::size_t kGridHeight{32};
+    
+      Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
+      Controller controller;
+      Game game(kGridWidth, kGridHeight);
+      game.Run(controller, renderer, kMsPerFrame, player);
+    
+      std::string name = player.GetName();
+      int score = game.GetScore();
+      int size = game.GetSize();
+    
+      std::cout << "Game has terminated successfully!\n";
+      std::cout << "Score: " << score << "\n";
+      std::cout << "Size: " << size << "\n";
 
-  std::cout << "Game has terminated successfully!\n";
-  std::cout << "Score: " << game.GetScore() << "\n";
-  std::cout << "Size: " << game.GetSize() << "\n";
+      //Write to log file
+      log.WriteToLogFile(name, score, size);
+        
+      // Determine if the player want to play again !
+      bool play_again = player.PlayAgain();
+      
+      if (!play_again)
+      {
+        break;
+      }
+  }
   return 0;
 }

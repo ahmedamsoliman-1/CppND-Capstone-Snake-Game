@@ -11,7 +11,7 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
         PlaceFood();
       }
 
-void Game::Run(Controller const &controller, Renderer &renderer, std::size_t target_frame_duration) 
+void Game::Run(Controller const &controller, Renderer &renderer, std::size_t target_frame_duration, Player player) 
 {
   Uint32 title_timestamp = SDL_GetTicks();
   Uint32 frame_start;
@@ -38,7 +38,7 @@ void Game::Run(Controller const &controller, Renderer &renderer, std::size_t tar
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) 
     {
-      renderer.UpdateWindowTitle(score, frame_count);
+      renderer.UpdateWindowTitle(score, frame_count, player.GetName());
       frame_count = 0;
       title_timestamp = frame_end;
     }
