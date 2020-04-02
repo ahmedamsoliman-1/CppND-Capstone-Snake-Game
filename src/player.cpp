@@ -1,4 +1,5 @@
 #include <iostream>
+// #include <locale>
 #include "player.h"
 
 Player::Player()
@@ -9,6 +10,16 @@ Player::Player()
     player_name = name;
 }
 
+void Player::ConvertToLowerCase(std::string &play_again)
+{
+    //Change input from the user to lower case
+    //Using pass-by-reference 
+    for (char &i : play_again)
+    {
+        i = tolower(static_cast<unsigned char>(i));
+    }
+}
+
 bool Player::PlayAgain()
 {
     while(true)
@@ -16,12 +27,14 @@ bool Player::PlayAgain()
         std::string play_again;
         std::cout << "Would you like to play agin? [y/n]: " << std::endl;
         std::cin >> play_again;
+
+        ConvertToLowerCase(play_again);
     
         if (play_again == "n" || play_again == "no")
         {
             return false;
         }
-        else if (play_again == "y" || play_again == "yes" || play_again == "Y" || play_again == "YES")
+        else if (play_again == "y" || play_again == "yes")
         {
             return true;
         }

@@ -12,6 +12,8 @@ public:
         return player_name; 
     }
     bool PlayAgain();
+private:
+    void ConvertToLowerCase(std::string &play_again);
 
 private:
 	std::string player_name;

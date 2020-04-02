@@ -34,7 +34,7 @@ void Log::WriteToLogFile(std::string name, int score, int siz)
 
 void Log::OpenFile()
 {
-    log_file.open("LOG_FILE.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+    log_file.open("../LOG_FILE.txt", std::fstream::in | std::fstream::out | std::fstream::app);
 }
 
 void Log::CloseFile()

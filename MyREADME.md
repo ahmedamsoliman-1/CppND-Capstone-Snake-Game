@@ -35,6 +35,7 @@ Done
 
 ```
 To be added
+and edit the snake_diagram
 ```
 
 # Explanation
@@ -55,4 +56,10 @@ The code accepts input from the user, and depending on it the execution flows to
 ```
 The prject successfully write (dump) data from programm execution to a file as log file. 
 --> Deonstreated in class "Log" which has been added.
+```
+
+## Reference usage
+```
+The project code reference to define varuible, as well as passing parameter to function by reference
+--> Demonstrated in the new "Player" class
 ```

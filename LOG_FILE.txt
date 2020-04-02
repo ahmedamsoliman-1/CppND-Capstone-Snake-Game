@@ -1,0 +1,2 @@
+Player-Score-Size
+Player name: Ahmed, Player score: 0 and snake size: 1
