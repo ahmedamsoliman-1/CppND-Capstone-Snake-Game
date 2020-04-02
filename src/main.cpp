@@ -1,6 +1,7 @@
 #include <iostream>
 #include "controller.h"
 #include "game.h"
+#include "player.h"
 #include "renderer.h"
 
 /*
@@ -17,20 +18,36 @@ loop.
 
 int main() 
 {
-  constexpr std::size_t kFramesPerSecond{60};                     //Game running at 60 frame per second 
-  constexpr std::size_t kMsPerFrame{1000 / kFramesPerSecond};     // milli second per frame 
-  constexpr std::size_t kScreenWidth{640};
-  constexpr std::size_t kScreenHeight{640};
-  constexpr std::size_t kGridWidth{32};
-  constexpr std::size_t kGridHeight{32};
+  Player player;
 
-  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-  Controller controller;
-  Game game(kGridWidth, kGridHeight);
-  game.Run(controller, renderer, kMsPerFrame);
-
-  std::cout << "Game has terminated successfully!\n";
-  std::cout << "Score: " << game.GetScore() << "\n";
-  std::cout << "Size: " << game.GetSize() << "\n";
+  while(true)
+  {
+      constexpr std::size_t kFramesPerSecond{60};                     //Game running at 60 frame per second 
+      constexpr std::size_t kMsPerFrame{1000 / kFramesPerSecond};     // milli second per frame 
+      constexpr std::size_t kScreenWidth{640};
+      constexpr std::size_t kScreenHeight{640};
+      constexpr std::size_t kGridWidth{32};
+      constexpr std::size_t kGridHeight{32};
+    
+      Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
+      Controller controller;
+      Game game(kGridWidth, kGridHeight);
+      game.Run(controller, renderer, kMsPerFrame, player);
+    
+      std::string name = player.GetName();
+    
+      std::cout << "Game has terminated successfully!\n";
+      std::cout << "Score: " << game.GetScore() << "\n";
+      std::cout << "Size: " << game.GetSize() << "\n";
+    
+    
+      // Determine if the player want to play again !
+      bool play_again = player.PlayAgain();
+      
+      if (!play_again)
+      {
+        break;
+      }
+  }
   return 0;
 }
