@@ -2,6 +2,7 @@
 #include "controller.h"
 #include "game.h"
 #include "player.h"
+#include "log.h"
 #include "renderer.h"
 
 /*
@@ -19,6 +20,7 @@ loop.
 int main() 
 {
   Player player;
+  Log log;
 
   while(true)
   {
@@ -35,12 +37,16 @@ int main()
       game.Run(controller, renderer, kMsPerFrame, player);
     
       std::string name = player.GetName();
+      int score = game.GetScore();
+      int size = game.GetSize();
     
       std::cout << "Game has terminated successfully!\n";
-      std::cout << "Score: " << game.GetScore() << "\n";
-      std::cout << "Size: " << game.GetSize() << "\n";
-    
-    
+      std::cout << "Score: " << score << "\n";
+      std::cout << "Size: " << size << "\n";
+
+      //Write to log file
+      log.WriteToLogFile(name, score, size);
+        
       // Determine if the player want to play again !
       bool play_again = player.PlayAgain();
       

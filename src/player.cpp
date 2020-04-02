@@ -21,13 +21,13 @@ bool Player::PlayAgain()
         {
             return false;
         }
-        else if (play_again == "y" || play_again == "yes")
+        else if (play_again == "y" || play_again == "yes" || play_again == "Y" || play_again == "YES")
         {
             return true;
         }
         else
         {
-            continue;
+            return false;
         }
     }
 }
