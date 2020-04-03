@@ -46,6 +46,9 @@ int main()
 
       //Write to log file
       log.WriteToLogFile(name, score, size);
+
+      //Kill the renderer 
+      renderer.~Renderer();
         
       // Determine if the player want to play again !
       bool play_again = player.PlayAgain();
