@@ -37,11 +37,11 @@ Renderer::Renderer(const std::size_t screen_width,
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
   }
 
-  //Initilize background texture
-  // if (background == NULL)
-  // {
-  //   background = LoadImage("background.jpg", sdl_renderer);
-  // }
+  // Initilize background texture
+  if (background == NULL)
+  {
+    background = LoadImage("/root/ahmed/Projects-Mine/CppND-Capstone-Snake-Game/src/background.jpg", sdl_renderer);
+  }
 }
 
 Renderer::~Renderer() 
@@ -61,7 +61,7 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, int level)
   SDL_RenderClear(sdl_renderer);
 
   // Render copy for background image
-  // SDL_RenderCopy(sdl_renderer , background , NULL , NULL );
+  SDL_RenderCopy(sdl_renderer , background , NULL , NULL );
 
   // Render food
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
@@ -120,23 +120,23 @@ void Renderer::RenderSecondLevelBorder(int width , int height , int level)
 }
 
 //Load a texture to be used for the background 
-// SDL_Texture* Renderer::LoadImage(const std::string &image_path, SDL_Renderer* sdl_renderer)
-// {
-//   //Create SDL_Surface*
-//   auto background = IMG_Load(image_path.c_str());
-//   if(background == NULL)
-//   {
-//     std::cout << "SDL_Surface image load failed: " << SDL_GetError() << '\n';
-//   }
+SDL_Texture* Renderer::LoadImage(const std::string &image_path, SDL_Renderer* sdl_renderer)
+{
+  //Create SDL_Surface*
+  SDL_Surface* background = IMG_Load(image_path.c_str());
+  if(background == NULL)
+  {
+    std::cout << "SDL_Surface image load failed: " << SDL_GetError() << '\n';
+  }
 
-//   //creates a SDL_Texture from a SDL_Surface
-//   SDL_Texture* texture = SDL_CreateTextureFromSurface(sdl_renderer , background); 
-//   if(texture == NULL)
-//   {
-//     std::cout << "SDL_Texure load failed: " << SDL_GetError() << '\n';
-//   }
+  //creates a SDL_Texture from a SDL_Surface
+  SDL_Texture* texture = SDL_CreateTextureFromSurface(sdl_renderer , background); 
+  if(texture == NULL)
+  {
+    std::cout << "SDL_Texure load failed: " << SDL_GetError() << '\n';
+  }
   
-//   //free memory from allocated surface
-//   SDL_FreeSurface(background);  
-//   return texture;
-// }
+  //free memory from allocated surface
+  SDL_FreeSurface(background);  
+  return texture;
+}

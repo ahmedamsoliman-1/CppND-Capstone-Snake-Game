@@ -5,7 +5,7 @@
 #include "SDL.h"
 #include "snake.h"
 #include "player.h"
-// #include "SDL2/SDL_image.h"
+#include "SDL2/SDL_image.h"
 
 class Renderer 
 {
@@ -21,8 +21,8 @@ public:
 private:
       SDL_Window *sdl_window;
       SDL_Renderer *sdl_renderer;
-      // SDL_Texture* LoadImage(const std::string &image_path, SDL_Renderer* sdl_renderer);
-      // SDL_Texture* background;
+      SDL_Texture* LoadImage(const std::string &image_path, SDL_Renderer* sdl_renderer);
+      SDL_Texture* background;
     
       const std::size_t screen_width;
       const std::size_t screen_height;

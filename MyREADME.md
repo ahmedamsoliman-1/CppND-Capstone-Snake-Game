@@ -40,6 +40,7 @@ and edit the snake_diagram
 # Support Added 
 ```
 The game now have new feature which is make the game more chalanging, by develope difficlty to the player, after eating food 10 times the speed of the snake go up and the snake wont be able to go accross the wall, and the wall change color and become clear it can not be crossed, as well as the game ask the player if he/she want to play again, and finally create a log file.
+additionally the background of the game has been add by using SDL sub module for Images.
 ```
 
 # Explanation
