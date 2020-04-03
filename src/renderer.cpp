@@ -4,7 +4,8 @@
 
 Renderer::Renderer(const std::size_t screen_width,
                    const std::size_t screen_height,
-                   const std::size_t grid_width, const std::size_t grid_height)
+                   const std::size_t grid_width, 
+                   const std::size_t grid_height)
     : screen_width(screen_width),
       screen_height(screen_height),
       grid_width(grid_width),
@@ -35,6 +36,12 @@ Renderer::Renderer(const std::size_t screen_width,
     std::cerr << "Renderer could not be created.\n";
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
   }
+
+  //Initilize background texture
+  // if (background == NULL)
+  // {
+  //   background = LoadImage("background.jpg", sdl_renderer);
+  // }
 }
 
 Renderer::~Renderer() 
@@ -52,6 +59,9 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, int level)
   // Clear screen
   SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
   SDL_RenderClear(sdl_renderer);
+
+  // Render copy for background image
+  // SDL_RenderCopy(sdl_renderer , background , NULL , NULL );
 
   // Render food
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
@@ -108,3 +118,25 @@ void Renderer::RenderSecondLevelBorder(int width , int height , int level)
         }
     }
 }
+
+//Load a texture to be used for the background 
+// SDL_Texture* Renderer::LoadImage(const std::string &image_path, SDL_Renderer* sdl_renderer)
+// {
+//   //Create SDL_Surface*
+//   auto background = IMG_Load(image_path.c_str());
+//   if(background == NULL)
+//   {
+//     std::cout << "SDL_Surface image load failed: " << SDL_GetError() << '\n';
+//   }
+
+//   //creates a SDL_Texture from a SDL_Surface
+//   SDL_Texture* texture = SDL_CreateTextureFromSurface(sdl_renderer , background); 
+//   if(texture == NULL)
+//   {
+//     std::cout << "SDL_Texure load failed: " << SDL_GetError() << '\n';
+//   }
+  
+//   //free memory from allocated surface
+//   SDL_FreeSurface(background);  
+//   return texture;
+// }
