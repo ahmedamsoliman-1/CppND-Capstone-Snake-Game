@@ -13,3 +13,9 @@ Player name: ahmed, Player score: 3 and snake size: 4
 Player name: ahmed, Player score: 3 and snake size: 4
 Player name: ahmed, Player score: 3 and snake size: 4
 Player name: Ahmed, Player score: 11 and snake size: 12
+Player name: ahmed, Player score: 1 and snake size: 2
+Player name: ahmed, Player score: 2 and snake size: 3
+Player name: ahmed, Player score: 4 and snake size: 5
+Player name: gg, Player score: 3 and snake size: 4
+Player name: ahm, Player score: 2 and snake size: 3
+Player name: ahmed, Player score: 7 and snake size: 8

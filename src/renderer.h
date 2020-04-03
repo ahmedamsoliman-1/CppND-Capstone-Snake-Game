@@ -15,6 +15,8 @@ class Renderer
   void Render(Snake const snake, SDL_Point const &food, int level);
   void UpdateWindowTitle(int score, int fps, std::string player_);
 
+  void RenderSecondLevelBorder(int wh , int ht , int level);
+
  private:
   SDL_Window *sdl_window;
   SDL_Renderer *sdl_renderer;

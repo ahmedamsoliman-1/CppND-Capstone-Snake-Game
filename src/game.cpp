@@ -94,7 +94,7 @@ void Game::Update()
   if (food.x == new_x && food.y == new_y) 
   {
     score++;
-    if (GetScore() == 10)
+    if (GetScore() == 2)
     {
       level = 1;
       snake.speed += 0.1;

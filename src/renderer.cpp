@@ -81,6 +81,10 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, int level)
   }
   SDL_RenderFillRect(sdl_renderer, &block);
 
+  //Render the wall for the next level of the game, dfine bellow 
+  RenderSecondLevelBorder(screen_width , screen_height , level);
+  
+
   // Update Screen
   SDL_RenderPresent(sdl_renderer);
 }
@@ -89,4 +93,18 @@ void Renderer::UpdateWindowTitle(int score, int fps, std::string player_)
 {
   std::string title{"Player: " + player_ + "Score achived: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
+}
+
+//Render the wall for the next level of the game
+void Renderer::RenderSecondLevelBorder(int width , int height , int level)
+{
+    if (level == 1)
+    {
+        SDL_SetRenderDrawColor(sdl_renderer , 255, 255, 255, SDL_ALPHA_OPAQUE);
+        for (int i = 0 ; i < 10 ; i++)
+        {
+            SDL_Rect rect_to_be_drawen = { i , i , width - 10 , height - 10};
+            SDL_RenderDrawRect(sdl_renderer , &rect_to_be_drawen);
+        }
+    }
 }
