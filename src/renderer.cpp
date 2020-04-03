@@ -110,7 +110,7 @@ void Renderer::RenderSecondLevelBorder(int width , int height , int level)
 {
     if (level == 1)
     {
-        SDL_SetRenderDrawColor(sdl_renderer , 255, 255, 255, SDL_ALPHA_OPAQUE);
+        SDL_SetRenderDrawColor(sdl_renderer , 0xFF, 0x00, 0x00, 0xFF);
         for (int i = 0 ; i < 10 ; i++)
         {
             SDL_Rect rect_to_be_drawen = { i , i , width - 10 , height - 10};
