@@ -12,10 +12,12 @@ class Game
 {
 public:
       Game(std::size_t grid_width, std::size_t grid_height);
-      void Run(Controller const &controller, Renderer &renderer,
-               std::size_t target_frame_duration, Player player);
+      void Run(Controller const &controller, Renderer &renderer, std::size_t target_frame_duration, Player player);
       int GetScore() const;
       int GetSize() const;
+
+      // level related
+      int GameLevel() const;
 
 private:
       Snake snake;
@@ -30,6 +32,9 @@ private:
 
       void PlaceFood();
       void Update();
+
+      //Level related
+      int level{0};
 };
 
 #endif

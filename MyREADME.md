@@ -37,13 +37,17 @@ Done
 To be added
 and edit the snake_diagram
 ```
+# Support Added 
+```
+The game now have new feature which is make the game more chalanging, by develope difficlty to the player, after eating food 10 times the speed of the snake go up and the snake wont be able to go accross the wall, as well as the game ask the player if he/she want to play again, and finally create a log file.
+```
 
 # Explanation
 
 ## (1) Understaing of C++ and OOP  
 ```
 The project code was already organized into classes with class and spicifier attributes to hold the data, and class methods to perform tasks, add to exesiting classes more clsses to extend the game to more functionalty and make it interactive. 
---> Demonstrated in class "Player" and class "Log" which was added 
+--> Demonstrated in class "Player" and class "Log" which was added
 ```
 
 ## (2) User inputs

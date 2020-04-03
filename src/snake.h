@@ -19,6 +19,7 @@ public:
       void GrowBody();
       bool SnakeCell(int x, int y);
       void SnakeStatus(bool &status, SDL_Point &current_cell, std::vector<SDL_Point> body);
+      void SetAlive();
 
       Direction direction = Direction::kDown;
 

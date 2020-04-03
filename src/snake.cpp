@@ -75,6 +75,11 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell)
       // SnakeStatus(alive, current_head_cell, body);
 }
 
+void Snake::SetAlive()
+{
+    alive = false;
+}
+
 void SnakeStatus(bool &status, SDL_Point &current_head_cell, std::vector<SDL_Point> body)
 {
     //Find weather the snake is alive or not 
