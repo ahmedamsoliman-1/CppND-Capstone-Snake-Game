@@ -81,6 +81,18 @@ All class member functions describe their functionality, either through function
 --> Demonstrated all over the project and also in classes "Player" and "Log" 
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+//To be edited later
 # README (All Rubric Points REQUIRED)
 The README is included with the project and has instructions for building/running the project.
 If any additional libraries are needed to run the project, these are indicated with cross-platform installation instructions.
@@ -93,8 +105,6 @@ The README indicates which rubric points are addressed. The README also indicate
 Compiling and Testing (All Rubric Points REQUIRED)
 The project code must compile and run without errors.
 We strongly recommend using cmake and make, as provided in the starter repos. If you choose another build system, the code must compile on any reviewer platform.
-[-] 
-'[-]'
 
 # Loops, Functions, I/O
 A variety of control structures are used in the project.
