@@ -27,18 +27,51 @@ Done
 
 ```
 * The instructions for running are mentioned in the original README.md
+* Basic Build Instructions
 * Overview
 * Explanation 
 ```
 
-# Overview and Support Added 
+## Instructions for building - Dependencies for Running Locally
+```
+* cmake >= 3.7
+  * All OSes: [click here for installation instructions](https://cmake.org/install/)
+* make >= 4.1 (Linux, Mac), 3.81 (Windows)
+  * Linux: make is installed by default on most Linux distros
+  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
+  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
+* SDL2 >= 2.0
+  * All installation instructions can be found [here](https://wiki.libsdl.org/Installation)
+  * Note that for Linux, an `apt` or `apt-get` installation is preferred to building from source.
+* gcc/g++ >= 5.4
+  * Linux: gcc / g++ is installed by default on most Linux distros
+  * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
+  * Windows: recommend using [MinGW](http://www.mingw.org/)
+* Addditionally: SDL2_Image >= 2.0
+  * For Linux `sudo apt-get install libsdl2-image-dev`
+```
+
+## Basic Build Instructions
 
 ```
+1. Clone this repo.
+2. Make a build directory in the top level directory: `mkdir build && cd build`
+3. Compile: `cmake .. && make`
+4. Run it: `./Game_Capstone`.
+```
+
+## Overview and Support Added 
+
 This project demonstrate a lot of C++ Programming language and extend this Snake game, following the principles I've learned throughout this Nanodegree Program. This project will demonstrate my independency to create applications using a wide range of C++ features.
 
 The game now have new feature which is make the game more chalanging, by develope difficlty to the player, after eating food seven times the speed of the snake go up and the snake wont be able to go accross the wall, and the wall change color and become clear it can not be crossed, as well as the game ask the player if he/she want to play again, and finally create a log file.
 additionally the background of the game has been add by using SDL sub module for Images.
-```
+
+The original game screenshot:
+<img src="snake_game.gif"/>
+Game after extention:
+<img src="data/final_game.JPG"/>
+
 
 # Explanation
 
