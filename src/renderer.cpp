@@ -40,7 +40,7 @@ Renderer::Renderer(const std::size_t screen_width,
   // Initilize background texture
   if (background == NULL)
   {
-    background = LoadImage("/root/ahmed/Projects-Mine/CppND-Capstone-Snake-Game/src/background.jpg", sdl_renderer);
+    background = LoadImage("/root/ahmed/Projects-Mine/CppND-Capstone-Snake-Game/data/back_ground.jpg", sdl_renderer);
   }
 }
 
@@ -64,7 +64,7 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, int level)
   SDL_RenderCopy(sdl_renderer , background , NULL , NULL );
 
   // Render food
-  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
+  SDL_SetRenderDrawColor(sdl_renderer, 2, 200, 94, 0xFF);
   block.x = food.x * block.w;
   block.y = food.y * block.h;
   SDL_RenderFillRect(sdl_renderer, &block);
@@ -83,7 +83,7 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, int level)
   block.y = static_cast<int>(snake.head_y) * block.h;
   if (snake.alive) 
   {
-    SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
+    SDL_SetRenderDrawColor(sdl_renderer, 0, 0, 0, 0xFF);
   } 
   else 
   {
@@ -110,7 +110,7 @@ void Renderer::RenderSecondLevelBorder(int width , int height , int level)
 {
     if (level == 1)
     {
-        SDL_SetRenderDrawColor(sdl_renderer , 0xFF, 0x00, 0x00, 0xFF);
+        SDL_SetRenderDrawColor(sdl_renderer , 0, 0, 0, 0);
         for (int i = 0 ; i < 10 ; i++)
         {
             SDL_Rect rect_to_be_drawen = { i , i , width - 10 , height - 10};
@@ -122,7 +122,7 @@ void Renderer::RenderSecondLevelBorder(int width , int height , int level)
 //Load a texture to be used for the background 
 SDL_Texture* Renderer::LoadImage(const std::string &image_path, SDL_Renderer* sdl_renderer)
 {
-  //Create SDL_Surface*
+  //Create SDL_Surface
   SDL_Surface* background = IMG_Load(image_path.c_str());
   if(background == NULL)
   {
