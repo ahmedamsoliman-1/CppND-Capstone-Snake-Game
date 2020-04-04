@@ -13,11 +13,14 @@ public:
           : grid_width(grid_width),
             grid_height(grid_height),
             head_x(grid_width / 2),
-            head_y(grid_height / 2) {}
+            head_y(grid_height / 2) 
+      {}
       //methods
       void Update();
       void GrowBody();
       bool SnakeCell(int x, int y);
+      void SnakeStatus(bool &status, SDL_Point &current_cell, std::vector<SDL_Point> body);
+      void SetAlive();
 
       Direction direction = Direction::kDown;
 

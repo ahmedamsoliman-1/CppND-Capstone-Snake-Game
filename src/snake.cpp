@@ -15,7 +15,8 @@ void Snake::Update()
 
       // Update all of the body vector items if the snake head has moved to a new
       // cell.
-      if (current_cell.x != prev_cell.x || current_cell.y != prev_cell.y) {
+      if (current_cell.x != prev_cell.x || current_cell.y != prev_cell.y) 
+      {
         UpdateBody(current_cell, prev_cell);
       }
 }
@@ -72,6 +73,24 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell)
           alive = false;
         }
       }
+      // SnakeStatus(alive, current_head_cell, body);
+}
+
+void Snake::SetAlive()
+{
+    alive = false;
+}
+
+void SnakeStatus(bool &status, SDL_Point &current_head_cell, std::vector<SDL_Point> body)
+{
+    //Find weather the snake is alive or not 
+    for(auto const &i : body)
+    {
+        if (current_head_cell.x == i.x && current_head_cell.y == i.y)
+        {
+          status = false;
+        }
+    }
 }
 
 //Called in game class

@@ -15,6 +15,7 @@ public:
 private:
     std::fstream log_file;
 
+
 };
 
 #endif

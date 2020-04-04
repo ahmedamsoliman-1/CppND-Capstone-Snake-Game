@@ -22,6 +22,7 @@ int main()
   Player player;
   Log log;
 
+  // Introduce infinite while loop to let the player start again optionally 
   while(true)
   {
       constexpr std::size_t kFramesPerSecond{60};                     //Game running at 60 frame per second 
@@ -46,13 +47,16 @@ int main()
 
       //Write to log file
       log.WriteToLogFile(name, score, size);
+
+      //Kill the renderer 
+      renderer.~Renderer();
         
       // Determine if the player want to play again !
       bool play_again = player.PlayAgain();
       
       if (!play_again)
       {
-        break;
+          break;
       }
   }
   return 0;

@@ -5,8 +5,8 @@
 Game::Game(std::size_t grid_width, std::size_t grid_height)
     : snake(grid_width, grid_height),
       engine(dev()),
-      random_w(0, static_cast<int>(grid_width)),
-      random_h(0, static_cast<int>(grid_height)) 
+      random_w(0, static_cast<int>(grid_width - 1)),
+      random_h(0, static_cast<int>(grid_height - 1)) 
       {
         PlaceFood();
       }
@@ -20,13 +20,14 @@ void Game::Run(Controller const &controller, Renderer &renderer, std::size_t tar
   int frame_count = 0;
   bool running = true;
 
-  while (running) {
+  while (running) 
+  {
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, snake);
     Update();
-    renderer.Render(snake, food);
+    renderer.Render(snake, food, level);
 
     frame_end = SDL_GetTicks();
 
@@ -82,11 +83,26 @@ void Game::Update()
   int new_x = static_cast<int>(snake.head_x);
   int new_y = static_cast<int>(snake.head_y);
 
+  if (GameLevel() == 1)
+  {
+    if (new_x == 0 || new_x == 31 || new_y == 0 || new_y == 31 )
+    {
+      snake.SetAlive();
+    }
+  }
+
   // Check if there's food over here
   if (food.x == new_x && food.y == new_y) 
   {
     score++;
+    if (GetScore() == 7)
+    {
+      level = 1;
+      snake.speed += 0.1;
+    }
+
     PlaceFood();
+
     // Grow snake and increase speed.
     snake.GrowBody();
     snake.speed += 0.02;
@@ -102,3 +118,9 @@ int Game::GetSize() const
 { 
   return snake.size; 
 }
+
+int Game::GameLevel() const 
+{
+    return level;
+}
+
