@@ -11,6 +11,7 @@ public:
 private:
         void ChangeDirection(Snake &snake, Snake::Direction input, Snake::Direction opposite) const;
         
+        
 };
 
 #endif

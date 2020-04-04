@@ -1,6 +1,11 @@
 #include <iostream>
-// #include <locale>
 #include "player.h"
+
+
+std::string Player::GetName()
+{
+    return player_name;
+}
 
 Player::Player()
 {

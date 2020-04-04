@@ -20,7 +20,8 @@ void Game::Run(Controller const &controller, Renderer &renderer, std::size_t tar
   int frame_count = 0;
   bool running = true;
 
-  while (running) {
+  while (running) 
+  {
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.

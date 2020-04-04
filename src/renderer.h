@@ -21,6 +21,7 @@ public:
 private:
       SDL_Window *sdl_window;
       SDL_Renderer *sdl_renderer;
+      //For the image background 
       SDL_Texture* LoadImage(const std::string &image_path, SDL_Renderer* sdl_renderer);
       SDL_Texture* background;
     

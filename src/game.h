@@ -29,12 +29,13 @@ private:
       std::uniform_int_distribution<int> random_h;
 
       int score{0};
+      //Level
+      int level{0};
 
+private: 
       void PlaceFood();
       void Update();
 
-      //Level related
-      int level{0};
 };
 
 #endif

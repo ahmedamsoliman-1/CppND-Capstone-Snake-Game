@@ -15,7 +15,8 @@ void Snake::Update()
 
       // Update all of the body vector items if the snake head has moved to a new
       // cell.
-      if (current_cell.x != prev_cell.x || current_cell.y != prev_cell.y) {
+      if (current_cell.x != prev_cell.x || current_cell.y != prev_cell.y) 
+      {
         UpdateBody(current_cell, prev_cell);
       }
 }

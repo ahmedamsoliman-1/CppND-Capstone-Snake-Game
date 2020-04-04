@@ -40,7 +40,8 @@ Renderer::Renderer(const std::size_t screen_width,
   // Initilize background texture
   if (background == NULL)
   {
-    background = LoadImage("/root/ahmed/Projects-Mine/CppND-Capstone-Snake-Game/data/back_ground.jpg", sdl_renderer);
+    std::string path = "../data/back_ground.jpg";
+    background = LoadImage(path, sdl_renderer);
   }
 }
 

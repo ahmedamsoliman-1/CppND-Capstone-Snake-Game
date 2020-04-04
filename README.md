@@ -1,7 +1,8 @@
 
 
+# CPPND: Capstone Snake Game (Proposed Project)
 
-# Steps to Complete the Capstone
+This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
 
 ## Step 1: Propose a Project
 
@@ -14,7 +15,7 @@ CppND-Capstone-Snake-Game
 ```
 * Already outlined project
 * The project pass satisfy the "README" and "Compiling and Testing" 
-* The project will pass at least five creiteria for the rubric
+* The project will pass at least five criteria for the rubric
 ```
 
 ## Step 3: Build your application
@@ -26,14 +27,14 @@ Done
 ## Step 4: Document Your Work
 
 ```
-* The instructions for running are mentioned in the original README.md
+* The instructions for running 
 * Basic Build Instructions
 * Overview
 * Explanation 
 ```
 
 ## Instructions for building - Dependencies for Running Locally
-```
+
 * cmake >= 3.7
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
 * make >= 4.1 (Linux, Mac), 3.81 (Windows)
@@ -49,7 +50,7 @@ Done
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 * Addditionally: SDL2_Image >= 2.0
   * For Linux `sudo apt-get install libsdl2-image-dev`
-```
+
 
 ## Basic Build Instructions
 
@@ -65,11 +66,13 @@ Done
 This project demonstrate a lot of C++ Programming language and extend this Snake game, following the principles I've learned throughout this Nanodegree Program. This project will demonstrate my independency to create applications using a wide range of C++ features.
 
 The game now have new feature which is make the game more chalanging, by develope difficlty to the player, after eating food seven times the speed of the snake go up and the snake wont be able to go accross the wall, and the wall change color and become clear it can not be crossed, as well as the game ask the player if he/she want to play again, and finally create a log file.
-additionally the background of the game has been add by using SDL sub module for Images.
+
+Additionally the background of the game has been add by using SDL sub module for Images.
 
 The original game screenshot:
 <img src="snake_game.gif"/>
-Game after extention:
+
+Game after extended:
 <img src="data/final_game.JPG"/>
 
 
@@ -77,7 +80,7 @@ Game after extention:
 
 ## (1) Understaing of C++ and OOP  
 ```
-The project code was already organized into classes with class and spicifier attributes to hold the data, and class methods to perform tasks, add to exesiting classes more clsses to extend the game to more functionalty and make it interactive. 
+The project is organized into classes with class and spicifier attributes to hold the data and different techniques of Object Oriented Programming, and class methods to perform tasks, add to exesiting classes more clsses to extend the game to more functionalty and make it interactive. 
 --> Demonstrated in class "Player" and class "Log" which was added
 ```
 
@@ -87,7 +90,7 @@ The code accepts input from the user, and depending on it the execution flows to
 --> Clear demonstrated in the file player.cpp in the loop
 ```
 
-## (3) Read/Write deta from/to files
+## (3) Read/Write data from/to files
 ```
 The prject successfully write (dump) data from programm execution to a file as log file. 
 --> Deonstreated in class "Log" which has been added.
@@ -109,4 +112,19 @@ All claass members are orgnized explicitly between public, protected and private
 ```
 All class member functions describe their functionality, either through function names or comments. 
 --> Demonstrated all over the project and also in classes "Player" and "Log" 
+```
+
+## (7) Loops, Functions, I/O
+```
+A variety of control structures are used in the project.
+```
+
+## (8) Memory Management
+```
+At least two variables are defined as references, or two functions use pass-by-reference in the project code.
+```
+
+## Concurrency
+```
+Concurrency support planned to implement and show later, due the time limitation for the subscription. 
 ```
