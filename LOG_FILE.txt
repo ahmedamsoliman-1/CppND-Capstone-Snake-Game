@@ -47,3 +47,4 @@ Player name: j, Player score: 2 and snake size: 3
 Player name: d, Player score: 2 and snake size: 3
 Player name: j, Player score: 13 and snake size: 14
 Player name: j, Player score: 5 and snake size: 6
+Player name: ahmed, Player score: 0 and snake size: 1
