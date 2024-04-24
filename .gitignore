@@ -1,5 +1,5 @@
 # dir
-/build
+CMakeFiles
 /.vsocde
 # Prerequisites
 *.d
